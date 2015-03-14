@@ -1,6 +1,6 @@
-# IDP Description
-Android Application
-This is our repo for the IDP class course at the Faculty of Computer Science, from the Polytechnic University of Bucharest, Romania.
+# IDP
+# Description
+This is our Android Application for the IDP class course at the Faculty of Computer Science, from the Polytechnic University of Bucharest, Romania.
 # Team: 
 Gryffindor
 # Members :
