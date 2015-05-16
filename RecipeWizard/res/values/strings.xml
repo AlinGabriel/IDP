@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecipeWizard</string>
+    <string name="registration_description">Please insert your contact information below.</string>
+    <string name="username_string">Username:</string>
+    <string name="password_string">Password:</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="email_address">Email Address:</string>
+    <string name="cancel_register_text">Cancel</string>
+    <string name="sign_in_text">Login</string>
+    <string name="sign_up_text">Register</string>
+</resources>
