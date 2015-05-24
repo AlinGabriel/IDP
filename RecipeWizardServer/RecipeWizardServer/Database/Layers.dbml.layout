@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 8.5" name="Layers">
+  <DataContextMoniker Name="/LayersDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f556ccd4-4655-4501-aa0a-b4a8472f1b95" absoluteBounds="4.75, 1.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LayersDataContext/UserRecipeRating" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ce377d6-ee1d-4a22-afda-d3f8a9b40baa" absoluteBounds="4.765, 2.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96fd110b-9df5-43a9-a4ce-5901c043a5cd" absoluteBounds="3, 4.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LayersDataContext/Recipe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df30a0df-c8dd-4237-b474-d2ce70fa84f0" absoluteBounds="3.015, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.8749995 : 4.25); (3.8749995 : 2.53929768880208); (4.75 : 2.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LayersDataContext/Recipe/Recipe_UserRecipeRating" />
+      <nodes>
+        <classShapeMoniker Id="96fd110b-9df5-43a9-a4ce-5901c043a5cd" />
+        <classShapeMoniker Id="f556ccd4-4655-4501-aa0a-b4a8472f1b95" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="edcd62ee-9b30-402e-9502-b68e6a38576b" absoluteBounds="9.875, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LayersDataContext/RecipeIngredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea7cb947-d46f-459e-951f-7e9e27da92a7" absoluteBounds="9.89, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.40624725 : 4.25); (3.40624725 : 1.21875); (9.875 : 1.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LayersDataContext/Recipe/Recipe_RecipeIngredient" />
+      <nodes>
+        <classShapeMoniker Id="96fd110b-9df5-43a9-a4ce-5901c043a5cd" />
+        <classShapeMoniker Id="edcd62ee-9b30-402e-9502-b68e6a38576b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ca27e3a8-0195-4d36-b814-5616522bd889" absoluteBounds="9.5, 5.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/LayersDataContext/Ingredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e913022a-1693-463e-a3da-30ede573a257" absoluteBounds="9.515, 5.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.96875 : 5.25); (10.96875 : 2.32859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LayersDataContext/Ingredient/Ingredient_RecipeIngredient" />
+      <nodes>
+        <classShapeMoniker Id="ca27e3a8-0195-4d36-b814-5616522bd889" />
+        <classShapeMoniker Id="edcd62ee-9b30-402e-9502-b68e6a38576b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48bbf208-bacc-4e71-a328-6764ce959caf" absoluteBounds="7.75, 3, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LayersDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="600400ae-9590-4133-9f62-211078bf1a35" absoluteBounds="7.7650000000000006, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 3.75804818880208); (5.90625 : 3.75804818880208); (5.90625 : 3.32859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LayersDataContext/User/User_UserRecipeRating" />
+      <nodes>
+        <classShapeMoniker Id="48bbf208-bacc-4e71-a328-6764ce959caf" />
+        <classShapeMoniker Id="f556ccd4-4655-4501-aa0a-b4a8472f1b95" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

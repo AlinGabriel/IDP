@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RecipeWizardDB" Class="LayersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=RecipeWizardDB;Integrated Security=True;Pooling=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RecipeWizardDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserRecipeRatings" Member="UserRecipeRatings">
+    <Type Name="UserRecipeRating">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Recipe_UserRecipeRating" Member="Recipe" ThisKey="RecipeId" OtherKey="Id" Type="Recipe" IsForeignKey="true" />
+      <Association Name="User_UserRecipeRating" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recipes" Member="Recipes">
+    <Type Name="Recipe">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExternalLink" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Recipe_UserRecipeRating" Member="UserRecipeRatings" ThisKey="Id" OtherKey="RecipeId" Type="UserRecipeRating" />
+      <Association Name="Recipe_RecipeIngredient" Member="RecipeIngredients" ThisKey="Id" OtherKey="RecipeId" Type="RecipeIngredient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipeIngredients" Member="RecipeIngredients">
+    <Type Name="RecipeIngredient">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IngredientId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Recipe_RecipeIngredient" Member="Recipe" ThisKey="RecipeId" OtherKey="Id" Type="Recipe" IsForeignKey="true" />
+      <Association Name="Ingredient_RecipeIngredient" Member="Ingredient" ThisKey="IngredientId" OtherKey="Id" Type="Ingredient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ingredients" Member="Ingredients">
+    <Type Name="Ingredient">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Ingredient_RecipeIngredient" Member="RecipeIngredients" ThisKey="Id" OtherKey="IngredientId" Type="RecipeIngredient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastAccess" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="User_UserRecipeRating" Member="UserRecipeRatings" ThisKey="Id" OtherKey="UserId" Type="UserRecipeRating" />
+    </Type>
+  </Table>
+</Database>
