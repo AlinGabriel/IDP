@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Configuration;
+using System.Data.Linq;
 
 namespace RecipeWizardServer.Database
 {
@@ -92,6 +93,11 @@ namespace RecipeWizardServer.Database
         {
             using (var dataContext = new LayersDataContext(ConfigurationManager.ConnectionStrings["RecipeWizardDBConnectionString"].ConnectionString))
             {
+                DataLoadOptions options = new DataLoadOptions();
+                options.LoadWith<Recipe>(c => c.RecipeIngredients);
+
+                dataContext.LoadOptions = options;
+
                 return dataContext.Recipes.ToList();
             }
         }
@@ -179,6 +185,71 @@ namespace RecipeWizardServer.Database
             targetIngredient.Name = this.Name;
 
             return targetIngredient;
+        }
+    }
+
+    public partial class RecipeIngredient
+    {
+        public static IEnumerable<RecipeIngredient> LoadByRecipeId(int recipeId)
+        {
+            using (var dataContext = new LayersDataContext(ConfigurationManager.ConnectionStrings["RecipeWizardDBConnectionString"].ConnectionString))
+            {
+                DataLoadOptions options = new DataLoadOptions();
+                options.LoadWith<RecipeIngredient>(c => c.Ingredient);
+                options.LoadWith<RecipeIngredient>(c => c.Recipe);
+
+                dataContext.LoadOptions = options;
+
+                return dataContext.RecipeIngredients.Where(r => r.RecipeId == recipeId).ToList();
+            }
+        }
+    }
+
+    public partial class UserRecipeRating
+    {
+        public void Detach()
+        {
+            this.PropertyChanged = null;
+            this.PropertyChanging = null;
+        }
+
+        public static UserRecipeRating LoadById(int userId, int recipeId)
+        {
+            using (var dataContext = new LayersDataContext(ConfigurationManager.ConnectionStrings["RecipeWizardDBConnectionString"].ConnectionString))
+            {
+                return dataContext.UserRecipeRatings.Where(rating => rating.UserId == userId && rating.RecipeId == recipeId).FirstOrDefault();
+            }
+        }
+
+        public void Save()
+        {
+            using (var dataContext = new LayersDataContext(ConfigurationManager.ConnectionStrings["RecipeWizardDBConnectionString"].ConnectionString))
+            {
+                this.Detach();
+
+                if (this.Id <= 0)
+                    dataContext.UserRecipeRatings.InsertOnSubmit(this);
+                else
+                    this.Clone(dataContext.UserRecipeRatings.SingleOrDefault(rating => rating.Id == this.Id));
+
+                dataContext.SubmitChanges();
+            }
+        }
+
+        public UserRecipeRating Clone()
+        {
+            var targetRating = new UserRecipeRating();
+            return Clone(targetRating);
+        }
+
+        public UserRecipeRating Clone(UserRecipeRating targetRating)
+        {
+            targetRating.Id = this.Id;
+            targetRating.Rating = this.Rating;
+            targetRating.RecipeId = this.RecipeId;
+            targetRating.UserId = this.UserId;
+
+            return targetRating;
         }
     }
 }

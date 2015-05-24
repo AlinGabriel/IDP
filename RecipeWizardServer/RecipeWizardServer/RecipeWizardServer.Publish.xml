@@ -1,24 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
   <publishProfile publishUrl="C:\Users\Alex\Desktop\Export" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="Web.config" publishTime="05/24/2015 19:23:52" />
-    <file relUrl="Site.Master" publishTime="05/24/2015 15:04:15" />
+    <file relUrl="Web.config" publishTime="05/25/2015 02:50:13" />
+    <file relUrl="Site.Master" publishTime="05/25/2015 01:20:10" />
     <file relUrl="Services/RecipeWizardService.svc" publishTime="05/23/2015 16:27:00" />
-    <file relUrl="Users.aspx" publishTime="05/24/2015 18:18:50" />
-    <file relUrl="Account/Register.aspx" publishTime="05/23/2015 16:23:45" />
-    <file relUrl="Recipes.aspx" publishTime="05/24/2015 15:03:08" />
-    <file relUrl="bin/RecipeWizardServer.pdb" publishTime="05/24/2015 19:23:42" />
-    <file relUrl="Account/Web.config" publishTime="05/23/2015 16:23:45" />
-    <file relUrl="Account/Login.aspx" publishTime="05/23/2015 16:23:45" />
-    <file relUrl="Styles/Site.css" publishTime="05/23/2015 16:23:46" />
+    <file relUrl="Users.aspx" publishTime="05/25/2015 00:20:33" />
+    <file relUrl="Recipes.aspx" publishTime="05/25/2015 01:57:32" />
+    <file relUrl="bin/RecipeWizardServer.pdb" publishTime="05/25/2015 02:27:44" />
+    <file relUrl="Ingredients.aspx" publishTime="05/25/2015 01:48:55" />
+    <file relUrl="Styles/Site.css" publishTime="05/25/2015 00:48:11" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="05/23/2015 16:23:46" />
-    <file relUrl="Account/ChangePassword.aspx" publishTime="05/23/2015 16:23:45" />
+    <file relUrl="RecipeIngredients.aspx" publishTime="05/25/2015 01:51:01" />
     <file relUrl="Global.asax" publishTime="05/23/2015 16:23:46" />
     <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="05/23/2015 16:23:46" />
-    <file relUrl="About.aspx" publishTime="05/23/2015 16:23:46" />
-    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="05/23/2015 16:23:45" />
-    <file relUrl="Default.aspx" publishTime="05/23/2015 16:23:46" />
+    <file relUrl="About.aspx" publishTime="05/25/2015 01:13:27" />
+    <file relUrl="Default.aspx" publishTime="05/25/2015 01:18:28" />
     <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="05/23/2015 16:23:46" />
-    <file relUrl="bin/RecipeWizardServer.dll" publishTime="05/24/2015 19:23:42" />
+    <file relUrl="bin/RecipeWizardServer.dll" publishTime="05/25/2015 02:27:44" />
   </publishProfile>
 </publishData>

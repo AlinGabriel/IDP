@@ -40,6 +40,28 @@ namespace RecipeWizardServer.Services
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "GetAllRecipes")]
         List<RecipeDataResponse> GetAllRecipes();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "GetRecipeIngredients/?recipeId={recipeId}")]
+        List<RecipeIngredientsDataResponse> GetRecipeIngredients(int recipeId);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "GetSuggestedRecipe")]
+        RecipeDataResponse GetSuggestedRecipe(Dictionary<int, int> availableIngredients);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "RateRecipe/?userId={userId}&recipeId={recipeId}&rating={rating}")]
+        bool RateRecipe(int userId, int recipeId, int rating);
     }
 
     [DataContract]
@@ -51,5 +73,16 @@ namespace RecipeWizardServer.Services
         public string Name { get; set; }
         [DataMember]
         public string Description { get; set; }
+    }
+
+    [DataContract]
+    public class RecipeIngredientsDataResponse
+    {
+        [DataMember]
+        public string RecipeName { get; set; }
+        [DataMember]
+        public string IngredientName { get; set; }
+        [DataMember]
+        public int Quantity { get; set; }
     }
 }

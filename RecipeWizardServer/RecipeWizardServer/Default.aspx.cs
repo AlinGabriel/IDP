@@ -12,7 +12,9 @@ namespace RecipeWizardServer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RecipeWizardServer.Database.User newUser = RecipeWizardServer.Database.User.LoadById(1);
+            labelUsers.Text = RecipeWizardServer.Database.User.LoadAll().Count().ToString() + " registered user(s)";
+            labelRecipes.Text = RecipeWizardServer.Database.Recipe.LoadAll().Count().ToString() + " registered recipe(s)";
+            labelIngredients.Text = RecipeWizardServer.Database.Ingredient.LoadAll().Count().ToString() + " registered ingredient(s)";
         }
     }
 }

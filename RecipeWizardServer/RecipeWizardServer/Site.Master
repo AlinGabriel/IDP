@@ -2,14 +2,14 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head id="Head1" runat="server">
+<head runat="server">
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="Form1" runat="server">
+    <form runat="server">
     <div class="page">
         <div class="header">
             <div class="title">
@@ -18,12 +18,29 @@
                 </h1>
             </div>
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <div class="menu" id="NavigationMenu" style="float: left;">
+                    <ul class="level1 static" tabindex="0" role="menubar" style="position: relative; width: auto; float: left;">
+                        <li role="menuitem" class="static" style="position: relative; float: left;">
+                            <a class="level1 static" href="Default.aspx" tabindex="-1">Home</a>
+                        </li>
+                        <li role="menuitem" class="static" style="position: relative; float: left;">
+                            <a class="level1 static" href="Users.aspx" tabindex="-1">Users</a>
+                        </li>
+                        <li role="menuitem" class="static" style="position: relative; float: left;">
+                            <a class="level1 static" href="Recipes.aspx" tabindex="-1">Recipes</a>
+                        </li>
+                        <li role="menuitem" class="static" style="position: relative; float: left;">
+                            <a class="level1 static" href="Ingredients.aspx" tabindex="-1">Ingredients</a>
+                        </li>
+                        <li role="menuitem" class="static" style="position: relative; float: left;">
+                            <a class="level1 static" href="About.aspx" tabindex="-1">About</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <asp:Menu ID="NavigationMenu1" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                        <asp:MenuItem NavigateUrl="~/Users.aspx" Text="Users"/>
-                        <asp:MenuItem NavigateUrl="~/Recipes.aspx" Text="Recipes"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="'"/>
                     </Items>
                 </asp:Menu>
             </div>

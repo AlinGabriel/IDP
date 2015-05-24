@@ -1,23 +1,16 @@
-﻿<%@ Page Title="Recipes Page" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeBehind="Recipes.aspx.cs" Inherits="RecipeWizardServer.Recipes" %>
+﻿<%@ Page Title="Ingredients Page" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.master" CodeBehind="Ingredients.aspx.cs" Inherits="RecipeWizardServer.Ingredients" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
-        Recipes List
+        Ingredients List
     </h2>
     <p>
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" 
-            GridLines="None" AutoGenerateEditButton="True" 
-            onrowediting="GridView1_RowEditing" onrowupdating="GridView1_RowUpdating" 
-            style="margin-right: 3px">
+            GridLines="None">
             <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:HyperLinkField DataNavigateUrlFields="Id" 
-                    DataNavigateUrlFormatString="RecipeIngredients.aspx?RecipeId={0}" 
-                    Text="View Ingredients" />
-            </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -10,7 +10,7 @@
 namespace RecipeWizardServer {
     
     
-    public partial class Recipes {
+    public partial class RecipeIngredients {
         
         /// <summary>
         /// GridView1 control.

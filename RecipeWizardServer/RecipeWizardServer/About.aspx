@@ -8,6 +8,15 @@
         About
     </h2>
     <p>
-        Put content here.
+        Team - Gryffindor
+    </p>
+    <p>
+        Team Members:
+            - Vladescu Alexandru (341 C3)
+            - Arhip Alin (342 C3)
+    </p>
+    <p>
+        Team Mentor:
+            - Catalin Gosman
     </p>
 </asp:Content>
